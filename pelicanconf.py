@@ -1,9 +1,9 @@
 AUTHOR = 'Klaus Bentzen, Rune Nedergaard, Andreas Holme'
 SITENAME = 'Ukraine-Russia War a Twitter Analysis'
 
-push = True
-# Uncomment this when pushing
-if push:
+# SET TO FALSE WHEN DEVELOPING
+publish = True
+if publish:
     SITEURL = 'https://drjupiter.github.io/comsci.github.io'
 GITHUB_URL = 'https://github.com/DrJupiter/comsci.github.io'
 
@@ -65,7 +65,7 @@ import markdown
 md = markdown.Markdown(extensions=['meta'])
 
 # Set Menu items
-if push:
+if publish:
     MENUITEMS = [(md.Meta['title'][0], f"{md.Meta['title'][0].lower().replace(' ', '-')}.html") for file in files if md.convert(Path(file).read_text(encoding='utf-8'))]
 else:
     MENUITEMS = [(md.Meta['title'][0], f"/{md.Meta['title'][0].lower().replace(' ', '-')}.html") for file in files if md.convert(Path(file).read_text(encoding='utf-8'))]
