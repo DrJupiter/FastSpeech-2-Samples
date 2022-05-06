@@ -36,7 +36,7 @@
 
 
 
-    <meta name="description" content="I once saw fifty cats eating lunch together meow.">
+    <meta name="description" content="For the reason that Tweets are a ready-made data source, we cannot ask the users their opinion on the conflict directly, so instead we...">
 
     <meta name="author" content="Klaus Bentzen, Rune Nedergaard, Andreas Holme">
 
@@ -47,7 +47,7 @@
 <!-- Open Graph -->
 <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Ukraine-Russia War a Twitter Analysis"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:title" content="Sentiment and Text analysis"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:description" content="I once saw fifty cats eating lunch together meow."/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="For the reason that Tweets are a ready-made data source, we cannot ask the users their opinion on the conflict directly, so instead we..."/>
 <meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://drjupiter.github.io/comsci.github.io/sentiment-and-text-analysis.html"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
@@ -74,7 +74,7 @@
   },
   "image": "https://drjupiter.github.io/comsci.github.io/images/header.jpg",
   "url": "https://drjupiter.github.io/comsci.github.io/sentiment-and-text-analysis.html",
-  "description": "I once saw fifty cats eating lunch together meow."
+  "description": "For the reason that Tweets are a ready-made data source, we cannot ask the users their opinion on the conflict directly, so instead we..."
 }
 </script>
 </head>
@@ -132,7 +132,19 @@
         <div class="inner">
             <section class="post-content">
                 <p><img alt="Volume" src="https://drjupiter.github.io/comsci.github.io/images/volume.png"></p>
-<p>I once saw fifty cats eating lunch together meow.</p>
+<p>For the reason that Tweets are a ready-made data source, we cannot ask the users their opinion on the conflict directly, so instead we have to automate the extraction of it using sentiment analysis. Basic sentiment analysis uses a sentiment lexicon, where each word is assigned a real-valued sentiment score that is either positive or negative. A Tweet can then be categorized as positive or negative based on the sum of these sentiments. However, this technique is known to work better for longer documents of text, whereas Tweets of course are rather short.</p>
+<p>Instead we will be using rule-based sentiment analysis provided by <a href="https://github.com/cjhutto/vaderSentiment">VADER</a> which provides a compound score for the sentiment. The compound score is the sum of the normalized sum of the positive, negative and neutral sentiment in a text. The value is normalized to be between -1 and +1.
+This combined with knowledge of the topic of the Tweet, which is extracted using context annotations and hashtags. Context annotations are auto-generated keywords, which provide <a href="https://developer.twitter.com/en/docs/twitter-api/annotations/overview">contextual information about the Tweet based on semantic analysis.</a></p>
+<p>However, this approach is imperfect because it can be ambiguous how to interpret a given sentiment score. Consider for example the following Tweet:</p>
+<h2>Not an actual tweet</h2>
+<p><center>"Oh my God Ukraine is completely destroyed, I'm so angry"</center></p>
+<p>The topic of this Tweet is “Ukraine” and it has a negative sentiment score, but that does not mean that the author is anti-Ukrainian. In order to disambiguate how the sentiment of Tweets should be interpreted, we do a couple of things: </p>
+<p>1) We assume that opinions on the conflict are binary, such that if you express support for Ukraine you express opposition towards the Russian invasion. </p>
+<p>2) A context window is used for each search word, such that the sentiment is only calculated for the five words on either side. This localizes the sentiment attributed to a topic, which allows a single tweet to express both negative sentiment towards e.g. Russia and positive sentiment towards Ukraine without these necessarily canceling each other out.</p>
+<p>3) The sentiment analysis is restricted to only four topics: “Ukraine”,”Russia”,”Putin” and “Zelensky”. Initially we only focused on the two presidents, since it seems reasonable to assume words with negative or positive sentiment within the context window of their names will express either dissatisfaction or support respectively. However, this limited the dataset too much and we therefore also included the countries. </p>
+<p>With this approach, we assign each user a single value describing his or her “Ukrainian support” using the following:</p>
+<p><img alt="Ukraine Support Formula" src="https://drjupiter.github.io/comsci.github.io/images/uk-support.png">
+<center><em>The Variables in the sum represent the users sentiment score for those words.</em></center></p>
             </section>
 
             <section class="post-info">
