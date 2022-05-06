@@ -79,5 +79,17 @@ The lexical dispersion is constructed based on a document created from all the t
 
 Here we see that the most prominent words have an even distribution, but something to note is that the word `help` which is also in the top 40 words has a slight decline over time.
 
-# Deeper look into the presidents, word clouds
+# The Presidents
 
+We were also interested in seeing the discourse within the Ukrainians and Russians about Vladimir Putin and Volodymyr Zelenskyy.
+
+![Ukraine Wordcloud]({static}/images/word_cloud_p_z_uk.png)
+
+<center> Wordclouds for the Ukrainian users' discourse about the presidents  </center>
+
+![Russia Wordcloud]({static}/images/word_cloud_p_z_ru.png)
+
+<center> Wordclouds for the Russian users' discourse about the presidents  </center>
+
+They two wordclouds are very similar, which alligns with the sentiment score over time for the two presidents within the two groups, which is also quite similar.
+It is interesting to see that the words used both in the context of Zelensky and Putin are so similar as well, since Putin's sentiment score is generally negative, where as Zelensky's is around 0 or positive.
