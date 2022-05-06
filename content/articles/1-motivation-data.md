@@ -5,7 +5,8 @@ Category: Template
 ---
 
 Link to [Github repository](https://github.com/DrJupiter/02467-final)
-Link to [Noteboo](https://github.com/DrJupiter/02467-final/blob/main/main.ipynb)
+
+Link to [Notebook](https://github.com/DrJupiter/02467-final/blob/main/main.ipynb)
 
 # Why study the Russia-Ukraine war?
 
