@@ -2,7 +2,7 @@ AUTHOR = 'Klaus Bentzen, Rune Nedergaard, Andreas Holme'
 SITENAME = 'Ukraine-Russia War a Twitter Analysis'
 
 # SET TO FALSE WHEN DEVELOPING
-publish = True
+publish = False
 if publish:
     SITEURL = 'https://drjupiter.github.io/comsci.github.io'
 GITHUB_URL = 'https://github.com/DrJupiter/comsci.github.io'

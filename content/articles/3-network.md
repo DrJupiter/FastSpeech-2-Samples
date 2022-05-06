@@ -73,5 +73,14 @@ The modularity score of the Louvain algorithm was found to be 0.93. Again using 
 
 ![Statistical evaluation of Louvain community split]({static}/images/random_lou_small.png)
 
-We can therefore conclude that the ‘Ukraine support’ community split is quite bad, but this does not tell us much about the reason for it performing so much worse than the Louvain algorithm. Is it because Ukrainian- and Russian supporters actually interact a lot on Twitter or is it because the metric is too ambiguous making ‘Ukraine support’ and uninformative measure? 
+We can therefore conclude that the ‘Ukraine support’ community split is quite bad, but this does not tell us much about the reason for it performing so much worse than the Louvain algorithm. Is it because Ukrainian- and Russian supporters actually interact a lot on Twitter or is it because the metric is too ambiguous making ‘Ukraine support’ and uninformative measure?
 
+In order to investigate this, we calculated something that we call “once-removed-agreement-degree”. This describes how much people are connected to other people who agree or disagree with them looking at their direct connections and their connections once removed, so the connections of their connections.
+
+If a user interacts directly with a user of similar opinion on the conflict, he or she gets a score of +1. If the user interacts with a user who interacts with another user of similar opinion (i.e. interaction once removed), the user gets a score of +½. Conversely, the user gets respectively -1 and -½ for interacting and once-removed-interacting with users of opposite opinion on the conflict. 
+
+The benefit of this measure is that it allows us to extract information from the larger network that also includes nodes outside of the network. Thus we can see if people get news from the same media, consider the same content etc. Positive score implies they are connected to people they agree with, and negative score implies they are connected to people they disagree with. A score close to zero implies they are equally distributed. We find the the following once-removed-agreement scores:
+
+![Once removed agreement]({static}/images/once_removed_degree.png)
+
+We find that both Russia supporters and Ukraine supporters have a positive score, which implies that they interact more with users of similar opinion. This is evidence against the aforementioned scenario two (that users of different opinions interact). As such, it seems that the reason for the low modularity score using the ‘Ukraine support’ community split is likely to be because the metric itself is inaccurate. 
