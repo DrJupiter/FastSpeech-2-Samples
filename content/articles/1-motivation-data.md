@@ -1,5 +1,5 @@
 ---
-Title: Motivation and The Dataset
+Title: Motivation and Data
 Date: 2022-01-01 16:30
 Category: Template
 ---
@@ -16,7 +16,7 @@ It seems that the Russian military offensive is going worse than they anticipate
 
 # Data Collection
 
-This project uses Twitter data gathered using the Twitter API v2. The API allows developers to pull Tweets based on a list of keywords. We based our data collection on a dataset of dehydrated Tweets created by an international research team who continuously update it as the conflict progresses (REF). For these Tweets to be dehydrated means that the dataset only contains Tweet ID’s, which is required by Twitters’ guidelines for data sharing. Subsequently, we hydrated the Tweets from the first 20 days of the conflict from 27/02/2022 - 18/03/2022 using the Twitter API v2. In their hydrated form, the following variables are available for each Tweet:
+This project uses Twitter data gathered using the Twitter API v2. The API allows developers to pull Tweets based on a list of keywords. We based our data collection on a dataset of dehydrated Tweets created by an international research team who continuously update it as the conflict progresses (REF). For these Tweets to be dehydrated means that the dataset only contains Tweet ID’s, which is required by Twitters’ guidelines for data sharing. Subsequently, we hydrated the Tweets from the first 20 days of the conflict from 27/02/2022 - 18/03/2022 using the Twitter API v2. The dataset in its hydrated form consists of 850K usable Tweets with the following variables available:
 
 - tweet_id
 - user_id
@@ -54,7 +54,7 @@ Tweets are a ready-made data source, since their authors did not directly intend
 
 
 However, a significant disadvantage of Twitter data in relation to our research topic lies in its unrepresentative user base.
-Multiple studies have found that Twitter users are on average younger, better educated and more politically active and therefore not representative of the general population (__REF__).
+Multiple studies have found that Twitter users are on average younger, better educated and more politically active and therefore not representative of the general population [Pew Research Center, "Sizing up Twitter Users", 2019](https://www.pewresearch.org/internet/2019/04/24/sizing-up-twitter-users/).
 Furthermore, we are particularly interested in analyzing potential developments in the interaction between communities whose sentiment differs on the topic.
 
 For this reason, it is not ideal that the dominant sentiment on Twitter is anti-Russian, as is illustrated in the following figure,  which shows the development of sentiment over the time period:
@@ -67,7 +67,7 @@ For this reason, it is not ideal that the dominant sentiment on Twitter is anti-
 ## A western bias
 
 The reason for this observed anti-Russian bias is likely because very few Russian-speaking people use Twitter and instead use the similar platform ‘VK’, which has a reach of over 73% in Russia as compared to [14% of Twitter](https://www.statista.com/chart/26988/most-popular-social-media-in-russia/). _This is also illustrated in the figure below_.
-In our hydrated dataset, we do not have access to geolocation due to Twitter policies (__REF__).
+In our hydrated dataset, we do not have access to geolocation due to [Twitter policies](https://developer.twitter.com/en/developer-terms/agreement-and-policy).
 Instead we use language as a proxy for nationality. This is an imperfect measure because Russian is the dominant language in some regions of Ukraine and is [the first language of 30% of the population](https://translatorswithoutborders.org/wp-content/uploads/2021/07/Ukraine-Language-Map.pdf)
 
 ![Ukraine Social Media]({static}/images/socailmedia.png)
