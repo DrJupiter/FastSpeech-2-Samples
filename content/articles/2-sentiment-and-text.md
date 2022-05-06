@@ -11,10 +11,10 @@ This combined with knowledge of the topic of the Tweet, which is extracted using
 
 However, this approach is imperfect because it can be ambiguous how to interpret a given sentiment score. Consider for example the following Tweet:
 
-## Not an actual tweet
-<center>"Oh my God Ukraine is completely destroyed, I'm so angry"</center>
+## Ambigouity of sentiment scores
+<center>"American actress Milla Jovovich, who was born in Kyiv, spoke about the war in Ukraine: "My country and people are being bombed." Details .. below"</center>
 
-The topic of this Tweet is “Ukraine” and it has a negative sentiment score, but that does not mean that the author is anti-Ukrainian. In order to disambiguate how the sentiment of Tweets should be interpreted, we do a couple of things: 
+The topic of this Tweet is “Ukraine” and it has a compound sentiment score of -0.6, but that does not mean that the author is anti-Ukrainian. In order to disambiguate how the sentiment of Tweets should be interpreted, we do a couple of things: 
 
 1) We assume that opinions on the conflict are binary, such that if you express support for Ukraine you express opposition towards the Russian invasion. 
 
