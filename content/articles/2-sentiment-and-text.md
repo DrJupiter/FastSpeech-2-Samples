@@ -27,11 +27,57 @@ With this approach, we assign each user a single value describing his or her “
 ![Ukraine Support Formula]({static}/images/uk-support.png)
 <center>_The Variables in the sum represent the users sentiment score for those words._</center>
 
-# Present Final end score
+![Ukraine Support]({static}/images/ukraine-support.png)
 
-# Deeper look into all 4 paramters by lang and by nationality
+Looking at the support for Ukraine over time, we see the support is always positive, but somewhat periodic in nature.
+We speculated this, the periodicity, might be correlated to certain events in the war, however looking at the [timeline](https://en.wikipedia.org/wiki/Timeline_of_the_2022_Russian_invasion_of_Ukraine) for the war, this correlation was not obvious to us in its existence.
 
-# Deeper look into the words actually used
+## A deeper look into the parameters for the Ukraine Support Score
+
+![Nation Sentiment All]({static}/images/sentiment-nation-all.png)
+
+This is an illustration of the individual sentiment scores for the words considered in the Ukraine Support. From this we see that Zelinskyy’s score doesn’t fluctuate much compared to the other scores and that most of the Ukraine support comes from negative sentiment towards Russia and Putin rather than positive sentiment towards Ukraine.
+This could be due to many Tweets about Ukraine potentially being double negative, however taking a closer look into where the sentiment is coming from
+
+![Ukraine Nation Sentiment]({static}/images/sentiment-nation-uk.png)
+
+<center> Ukrainian users' sentiment contribution </center>
+
+![Russia Nation Sentiment]({static}/images/sentiment-nation-ru.png)
+
+<center> Russian users' sentiment contribution </center>
+
+We see that, besides for Zelenskyy, Ukrainian users show some positive sentiment towards Ukraine, whereas Russian users are almost solely negative, save for the 17th of March.
+
+Looking only at the Tweets tweeted in Ukrainian or Russian reveals an even more interesting pattern.
+
+![Ukraine Language]({static}/images/sentiment-by-lang-uk.png)
+
+![Russian Language]({static}/images/sentiment-by-lang-ru.png)
+
+Ukrainian speech about Ukraine looks to be solely positive and that about Russia and Putin mostly negative. Russian speech about Ukraine is very negative and the words considered are in general negative. Thus, in our dataset at least, Ukrainians don’t speak negatively of their country in their mother tongue.
+
+# Word Frequency
+
+At this point it might be relevant to ask, how often are the words used to gauge the Ukraine Support actually used in the text data?
+
+![Word Frequency Distribution]({static}/images/word_freq.png)
+
+Ukraine, Russia and Putin can be found in the top 5 words, but Zelenskyy only shows up in the top ~40.
+The explanation for can be found in the many aliases for Zelenskyy which include:
+
+<center>"Volodymyr","Volodymyr Zelenskyy","Zelenskyy","volodymyr zelenskyy","volodymyr","zelenskyy","ZelenskyyUa","Volodymyr Zelensky","Zelensky","zelensky","zelenskyyua" </center>
+
+Compared to Putin which only had 5 prominent aliases.
+This and the fact that after the 10th word, the word frequencies become very close to each other with a slow decline.
+Thus the frequency of the 10th most prominent word `military` is not that different from that of `zelensky`.
+
+We also look at the lexical dispersion for some words we deemed relevant to the war. 
+The lexical dispersion is constructed based on a document created from all the text, but ordered in regards to when the tweet was created.
+
+![Lexical Dispersion]({static}/images/time-dependent-lexical-dispersion.png)
+
+Here we see that the most prominent words have an even distribution, but something to note is that the word `help` which is also in the top 40 words has a slight decline over time.
 
 # Deeper look into the presidents, word clouds
 

@@ -71,4 +71,4 @@ else:
     MENUITEMS = [(md.Meta['title'][0], f"/{md.Meta['title'][0].lower().replace(' ', '-')}.html") for file in files if md.convert(Path(file).read_text(encoding='utf-8'))]
 
 
-HEADER_COVER = 'images/header.jpg'
+HEADER_COVER = 'images/header.png'
