@@ -4,6 +4,9 @@ Date: 2022-01-01 16:30
 Category: Template
 ---
 
+Link to [Github repository](https://github.com/DrJupiter/02467-final)
+Link to [Noteboo](https://github.com/DrJupiter/02467-final/blob/main/main.ipynb)
+
 # Why study the Russia-Ukraine war?
 
 War is a topic whose terrible importance speaks for itself. The question is rather: what can we as data scientists contribute by analyzing it? One particular aspect of this war that arguably lends itself well to a computational social science analysis, is that both sides arguably frame it as a matter of protecting citizens who they perceive as part of their national community. Consider the following quote, which is how Vladimir Putin begins an essay from July 12th 2021: 
@@ -27,6 +30,8 @@ This project uses Twitter data gathered using the Twitter API v2. The API allows
 - hashtags
 - topics
 - mentions
+
+The text was cleaned by removing links using regex, a string pattern searching technique, and translating emojis into text. Thereafter, the text was translated to english using google translate. It was essential to translate the emojis, as they carry a lot of emotion, thus affecting the semantic score. Without translating them, google translate would simply have removed them.
 
 A potential complication in basing our analysis on a pre-collected set of dehydrated Tweets, is that we did not have control over how these were collected. The authors of the employed dataset describe the purpose of their collection as: “This data can help in studying the political discourse, opinion mining, and (mis)information propagation on Twitter”
 [Ehsan-Ul Haq, Gareth Tyson, Lik-Hang Lee, Tristan Braud, and Pan Hui, “Twitter dataset for 2022 russo-ukrainian crisis,” 2022](https://arxiv.org/pdf/2203.02955.pdf)
