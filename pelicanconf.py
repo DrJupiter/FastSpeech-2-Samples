@@ -1,5 +1,5 @@
 AUTHOR = 'Klaus Bentzen, Rune Nedergaard, Andreas Holme'
-SITENAME = 'Ukraine-Russia War a Twitter Analysis'
+SITENAME = 'FastSpeech2 Audio Samples'
 
 # SET TO FALSE WHEN DEVELOPING
 publish = True
@@ -13,6 +13,7 @@ TIMEZONE = 'Europe/Copenhagen'
 
 DEFAULT_LANG = 'en'
 
+PLUGINS = ['liquid_tags', 'neighbors']
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -25,8 +26,9 @@ LINKS = (('Github Repository', 'https://github.com/Skroko/02466-Corti-AI-Project
          )
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+          ('github', 'https://github.com/DrJupiter'),
+         )
 
 DEFAULT_PAGINATION = False
 
@@ -69,4 +71,6 @@ else:
     MENUITEMS = [(md.Meta['title'][0], f"/{md.Meta['title'][0].lower().replace(' ', '-')}.html") for file in files if md.convert(Path(file).read_text(encoding='utf-8'))]
 
 
-HEADER_COVER = 'images/header.png'
+HOME_COVER = 'images/header.png'
+#HEADER_COVER = 'images/header.png'
+
