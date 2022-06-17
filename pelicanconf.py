@@ -4,8 +4,8 @@ SITENAME = 'Ukraine-Russia War a Twitter Analysis'
 # SET TO FALSE WHEN DEVELOPING
 publish = True
 if publish:
-    SITEURL = 'https://drjupiter.github.io/FastSpeech-2-Samples/'
-GITHUB_URL = 'https://drjupiter.github.io/FastSpeech-2-Samples/'
+    SITEURL = 'https://drjupiter.github.io/FastSpeech-2-Samples'
+GITHUB_URL = 'https://drjupiter.github.io/FastSpeech-2-Samples'
 
 PATH = 'content'
 
