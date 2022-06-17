@@ -4,8 +4,8 @@ SITENAME = 'Ukraine-Russia War a Twitter Analysis'
 # SET TO FALSE WHEN DEVELOPING
 publish = True
 if publish:
-    SITEURL = 'https://drjupiter.github.io/comsci.github.io'
-GITHUB_URL = 'https://github.com/DrJupiter/comsci.github.io'
+    SITEURL = 'https://drjupiter.github.io/FastSpeech-2-Samples/'
+GITHUB_URL = 'https://drjupiter.github.io/FastSpeech-2-Samples/'
 
 PATH = 'content'
 
@@ -21,10 +21,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://www.python.org/'),
-         ('Jinja2', 'https://palletsprojects.com/p/jinja/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('Github Repository', 'https://github.com/Skroko/02466-Corti-AI-Project'),
+         )
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
